@@ -1,0 +1,1 @@
+com.oracle.apm.agent.deepdive.trace.snapshots.collection.enable=true
