@@ -1,0 +1,65 @@
+%YAML 1.1
+---
+abc: letter
+a: #comment1
+  b: 'abc'
+  c: 'def'
+b: 
+  'efg'
+# this is the comment block
+address: |
+  at/po- nupatana
+  ps- tigiria
+
+comment: >
+  nice apiVersion: v1
+  kind: PersistentVolume
+
+key: #comment2
+  - abc: 
+     1
+     2
+     3
+  #2nd comment
+  - def
+  - 32
+  - 4.5
+  
+data: ['abc', 'def', 'efg']
+
+common: &commondata
+  a: 1
+  b: 2
+
+copy1:
+  c: 3
+  <<: *commondata
+
+server:
+  ? 'r1'
+  : 'r2'
+  ? 'r3'
+  : 'r4'
+
+strip: |-
+   text↓
+clip: |
+   text↓
+keep: |+
+   text↓
+...
+---
+!!map {
+   ? !!str "sequence"
+   : !!seq [
+      !!str "one", !!str "two"
+   ],
+   ? !!str "mapping"
+   : !!map {
+      ? !!str "sky" : !!str "blue",
+      ? !!str "sea" : !!str "green",
+   }
+}
+
+...
+
